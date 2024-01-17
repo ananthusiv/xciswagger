@@ -1,0 +1,158 @@
+/* Add Bootstrap styles for responsiveness */
+.container-fluid.ProductPage {
+    padding: 20px; /* Adjust padding as needed */
+}
+/* ProductPage.css */
+/* ... (your existing styles) */
+
+.product2 {
+    position: absolute;
+    top: 0;
+    left:-200px;
+    width: 120%; /* Increase the width */
+    max-width: none; /* Remove the max-width constraint */
+    height: auto;
+    z-index: 2;
+    transform: translateX(50px);
+    transition: transform 1s ease;
+}
+
+/* ... (your existing styles) */
+
+.bg2-image{
+    width: 100%;
+    height:70%;
+}
+#arrowGroup .arrow-item {
+    opacity: 0;
+    transform: translateX(-50px); /* Initial position off-screen */
+    transition: opacity 0.5s ease, transform 2s ease;
+}
+
+/* Apply animation on mouse enter */
+#product2:hover, #arrowGroup:hover .arrow-item  {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+
+.arrow-group {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.arrow-item img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.arrow-item p {
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.size-guide-container {
+    display: flex;
+    align-items: center;
+}
+
+.size-guide-text {
+    font-style: italic;
+    padding-top: 10px;
+    text-decoration: underline;
+    color: white;
+}
+
+/* ... (your existing styles) */
+
+
+.col-lg-4 {
+    width: 100%;
+    height: auto;
+    order: 2;
+}
+
+.col-lg-8 {
+    width: 100%;
+    height: auto;
+    order: 1;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 992px) {
+
+    .arrow-group {
+        width: 100%;
+        margin-left: 0;
+        top: 0;
+        text-align: center;
+    }
+
+    .product2 {
+        position: relative;
+        left: 0;
+        transform: translateX(0);
+        transition: transform 1s ease;
+        z-index: 2; /* Ensure product2 is on top */
+    }
+
+    .bg2-image {
+        position: relative;
+        left: 0;
+        top: 20%; /* Adjust top position as needed */
+        z-index: 1; /* Lower z-index to be behind product2 */
+    }
+}
+/* ... (your existing styles) */
+
+@media (max-width: 768px) {
+    .col-lg-8 {
+        width: 100%;
+        height: auto;
+        order: 1;
+    }
+
+    .arrow-group {
+        width: 100%;
+        margin-left: 0;
+        margin-top: -80px;
+        text-align: center;
+        z-index: 4;
+    }
+
+    .product2 {
+        position: relative;
+        left: -80px;
+        margin-top: -300px;
+        transform: translateX(0);
+        transition: transform 1s ease;
+        z-index: 2; /* Ensure product2 is on top */
+        max-width: 120%;
+        height: auto;
+    }
+
+    .bg2-image {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        left: 0;
+        top: 20%;
+        z-index: 0; /* Lower z-index to be behind product2 */
+    }
+}
+
+/* ... (your existing styles) */
+
+
+/* Add additional media queries as needed */

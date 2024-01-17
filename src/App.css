@@ -1,0 +1,15 @@
+/* App.css */
+
+.app {
+  /* Your existing styles for larger screens */
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .mobile-menu {
+      /* Styles specific to smaller screens */
+      display: flex; /* Ensure the mobile menu is visible */
+    }
+
+    /* Adjust other styles for smaller screens if needed */
+  }
+}

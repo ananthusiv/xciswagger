@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  text-size-adjust: 100%;
+}
+.detailing-container {
+  position: relative;
+  z-index: 1; /* or another appropriate value */
+}
+
+
+.detailing-group {
+  position: relative;
+  width: 100vw; /* 100% of viewport width */
+  height: 100vh; /* 100% of viewport height */
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.detailing-img1,
+.detailing-img2,
+.detailing-img3,
+.detailing-img4 {
+  width: 60%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  transition: transform 0.5s; /* Add transition for smooth animation */
+  margin: auto; /* Center the images within their containers */
+}
+
+.detailing-img1,
+.detailing-img3 {
+  margin-left: 200px;
+}
+
+.detailing-img2,
+.detailing-img4 {
+  margin-right: 200px;
+}
+
+.detailing-img1:hover,
+.detailing-img2:hover,
+.detailing-img3:hover,
+.detailing-img4:hover {
+  transform: scale(1.5); /* Zoom in effect on hover */
+  z-index: 2;
+}
+
+.line-horizontal,
+.line-vertical {
+  background-color: white;
+  position: absolute;
+}
+
+.line-horizontal {
+  width: 30%; /* Half the width */
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 35%; /* Adjust to center horizontally */
+}
+
+.line-vertical {
+  width: 2px;
+  height: 50%; /* Half the height */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%; /* Adjust to center vertically */
+}
+@media only screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens */
+  .detailing-group {
+    width: 90%;
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+  }
+
+  .line-horizontal,
+  .line-vertical {
+    display: none;
+  }
+
+  .detailing-img1,
+  .detailing-img3,
+  .detailing-img2,
+  .detailing-img4 {
+    grid-column: 8 / span 1; /* Span only one column */
+    margin: 0; /* Remove margin for better fit */
+    width: 100%; /* Adjust the width to fit the container */
+  }
+}
